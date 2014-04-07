@@ -1,0 +1,991 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Startup Institute - CSS Frameworks</title>
+
+    <meta name="description" content="Overview and Walkthrough of CSS Frameworks Today.">
+    <meta name="author" content="Clay Johnson">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>CSS Frameworks</h1>
+          <h3>What, Why, How, Huh?</h3>
+        </section>
+
+        <section>
+          <section>
+            <h2>Who Am I?</h2>
+          </section>
+          <section>
+            <h2>Clay Johnson</h2>
+            <ul>
+              <li>Just started as VP of Technology at <a href="//musicdealers.com">Music Dealers</a></li>
+              <li>Previously at <a href="//cars.com">Cars.com</a> (Enterprise Architect, Director of Product) <br>and <a href="//monster.com">Monster.com</a> (Front-end Architect, Design Manager).</li>
+              <li>Background in Art (BA) and Design (MFA). 
+                <ul>
+                  <li>Everything is a User-Experience problem.</li>
+                  <li><em>Most things are data problems.</em></li>
+                </ul>
+              </li>
+              <li>Love Front-end Development, CSS and Javascript.</li>
+              <li>Started writing CSS in 1998.</li>
+            </ul>
+            <p><a href="//www.linkedin.com/in/clayjohnson">www.linkedin.com/in/clayjohnson</a></p>
+
+            <aside class="notes">
+              Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Key Terms</h2>
+          </section>
+          <section>
+            <h2>Responsive</h2>
+            <p>The ability to render content with display based on the container it is rendered in.</p>
+          </section>
+          <section>
+            <h2>Media Queries</h2>
+            <p>CSS Definition containers that are dependent on a given media that is rendering the content.</p>
+          </section>
+          <section>
+            <h2>Breakpoints</h2>
+            <p>The definitions, based on width, where media queries kick in to drive style changes.</p>
+          </section>
+          <section>
+            <h2>Flow</h2>
+            <p>The manner/ruleset in which the browser renders the document.</p>
+          </section>
+        </section>
+
+        <!-- Example of nested vertical slides -->
+        <section>
+          <section>
+            <h2>CSS Frameworks Overview</h2>
+            <p>What they are. What they ain't.</p>
+          </section>
+          <section>
+            <h2>What they are.</h2>
+            <p>Common elements of a CSS Framework.</p>
+          </section>
+          <section>
+            <h2>A Grid Definition</h2>
+            <img src="img/grid-samples.png" alt="">
+          </section>
+          <section>
+            <h2>UI Elements</h2>
+            <img src="img/ui-elements.png" alt="">
+          </section>
+          <section>
+            <h2>Javascript UI Enhancements</h2>
+            <img src="img/javascript-ui-enhancement.png" alt="">
+          </section>
+          <section>
+            <h2>CSS Preprocessor Support</h2>
+            <img src="img/css-preprocessor.png" alt="">
+          </section>
+          <section>
+            <h2>Helper / Command Line Tools</h2>
+            <img src="img/helper-tools.png" alt="">
+          </section>
+          <section>
+            <h2>Associated Formats</h2>
+            <img src="img/associated-tools.png" alt="">
+          </section>
+          
+          <section>
+            <h2>What they are not.</h2>
+            <p>Frameworks are not typically going to be used in a web product for</p>
+            <ul>
+              <li>The final overall look or theme of a production site.</li>
+              <li>Covering the full gamut of website interaction.</li>
+              <li>Going to make or break any web property.</li>
+              <li>Magic.</li>
+            </ul>
+
+            <aside class="notes">
+              They are the same base of CSS you'd use for a custom project, but pre-baked to make life easier. You still have to know what you are doing.
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Problem Solvers</h2>
+            <p>Ulitmately, frameworks exist to solve a set of problems.</p>
+          </section>
+          <section>
+            <ul>
+              <li>Quickly Prototyping Solutions</li>
+              <li>Cross-Screen Consistency</li>
+              <li>Enforcing Design Consistency</li>
+              <li>Creating Maintainable Templates ("Futureproofing")</li>
+              <li>Hide Crazy CSS Workarounds</li>
+            </ul>
+
+            <aside class="notes">
+              Mention that a good codebase looks like it was written by one developer. Ultimately, they make collectinos of boxes that have variable layouts based on their context.
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Opinionated</h2>
+            <p>There are nuances in how they solve these problems.</p>
+          </section>
+          <section>
+            <ul>
+              <li>Grid Dimensions, Fluid/Stiff Grids</li>
+              <li>Normalization: font-size, line-height, column-width, gutters</li>
+              <li>Integrated Javascript</li>
+              <li>Number of Breakpoint sets (small, med, large)</li>
+              <li>Icons/Fonts</li>
+              <li>UI and (Forced) Customization</li>
+              <li>Which Browsers to Support</li>
+            </ul>
+          </section>
+
+          <section>
+            <img src="img/kube-font-opinion.png" alt="">
+          </section>
+
+        </section>
+
+        <section data-background-transition="slide">
+          <section>
+            <h2>Who they are.</h2>
+          </section>
+
+          <section data-transition="linear" data-background-transition="slide">
+            <h2>Bootstrap</h2>
+            <p><img src="img/brand-bootstrap.png" alt=""></p>
+            <ul>
+              <li>Maintained by Twitter</li>
+              <li>Most Common</li>
+              <li>Strong Visual Style</li>
+              <li></li>
+            </ul>
+            <p><a href="//getbootstrap.com">getbootstrap.com</a></p>
+          </section>
+
+          <section data-transition="linear" data-background-transition="slide">
+            <h2>Foundation</h2>
+            <p><img src="img/brand-foundation.png" alt=""></p>
+            <ul>
+              <li>Maintained by Zurb</li>
+              <li>Thought of as more developer focused</li>
+            </ul>
+            <p><a href="//foundation.zurb.com">foundation.zurb.com</a></p>
+          </section>
+
+          <section data-transition="linear" data-background-transition="slide">
+            <h2>Pure</h2>
+            <p><img src="img/brand-pure.png" alt=""></p>
+            <ul>
+              <li>Maintained by Yahoo</li>
+              <li>Multiple Modules</li>
+              <li>Very Small</li>
+              <li>Newer than Foundation or Bootstrap</li>
+            </ul>
+            <p><a href="//purecss.io">purecss.io</a></p>
+          </section>
+
+          <section data-transition="linear" data-background-transition="slide">
+            <h2>Blueprint</h2>
+            <p><img src="img/brand-blueprint.png" alt=""></p>
+            <ul>
+              <li>A (The) Founding Member</li>
+            </ul>
+            <p><a href="//www.blueprintcss.org">blueprintcss.org</a></p>
+          </section>
+
+          <section data-transition="linear" data-background-transition="slide">
+            <h2>Gumby</h2>
+            <p><img src="img/brand-gumby.png" alt=""></p>
+            <ul>
+              <li>Full CSS Framework</li>
+              <li>Heavy Variable Usage with Sass</li>
+              <li>Customizable Source Builder</li>
+            </ul>
+            <p><a href="//gumbyframework.com">gumbyframework.com</a></p>
+          </section>
+
+          <section data-transition="linear" data-background-transition="slide">
+            <h2>Profound Grid</h2>
+            <p><img src="img/brand-profound.png" alt=""></p>
+            <ul>
+              <li>Focused on the grid only</li>
+              <li>Geared to be extended into your CSS</li>
+            </ul>
+            <p><a href="//profoundgrid.com">profoundgrid.com</a></p>
+          </section>
+
+          <section data-transition="linear" data-background-transition="slide">
+            <h2>Kube</h2>
+            <p><img src="img/brand-kube.png" alt=""></p>
+            <ul>
+              <li>Minimal and Clean Framework</li>
+            </ul>
+            <p><a href="//imperavi.com/kube">imperavi.com/kube</a></p>
+          </section>
+
+          <section data-transition="linear" data-background-transition="slide">
+            <h2>Cascade</h2>
+            <p><img src="img/brand-cascade.png" alt=""></p>
+            <ul>
+              <li>Focus on Modularity (14 separate modules)</li>
+              <li>IE6 Support!</li>
+            </ul>
+            <p><a href="//cascade-framework.com">cascade-framework.com</a></p>
+          </section>
+
+          <section data-transition="linear" data-background-transition="slide">
+            <h2>Baseline</h2>
+            <p><img src="img/brand-baseline.png" alt=""></p>
+            <ul>
+              <li>Geared around Typography</li>
+            </ul>
+            <p><a href="//baselinecss.com">baselinecss.com</a></p>
+          </section>
+
+          <section data-transition="linear" data-background-transition="slide">
+            <h2>Formee</h2>
+            <p><img src="img/brand-formee.png" alt=""></p>
+            <ul>
+              <li>Focused on Forms</li>
+            </ul>
+            <p><a href="//formee.org">formee.org</a></p>
+          </section>
+
+        </section>
+
+
+
+
+        <section>
+          <section>
+            <h2>Let's Do Something</h2>
+          </section>
+          <section>
+            <h2>Recreating Viget</h2>
+            <p>We are focusing on the base layout</p>
+            <img src="img/viget-com.png" alt="">
+            <p><a href="http://viget.com/">Viget.com</a></p>
+            <aside class="notes">
+              there is essentially only one breakpoint, around medium size
+            </aside>
+          </section>
+          <section>
+            <h2>Build Base Template</h2>
+            <p>Get the initial HTML skeleton Together</p>
+            <p>Include Bootstrap Assets (CDN)</p>
+          </section>
+          
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            <!doctype html>
+            <html lang="en">
+            <head>
+              <meta charset="UTF-8">
+              <title>Bootstrap Me</title>
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+              <!-- Latest compiled and minified CSS -->
+              <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+              <!-- Optional theme -->
+              <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+            </head>
+            <body>
+
+              <!-- also add jquery and bootstrap js to the end of the body tag -->
+            </body>
+            </html>
+            ```
+            </script>
+          </section>
+
+          <section>
+            <h2>Define Generic Layout</h2>
+            <p>Insert Header, Footer, Section, Div placeholders</p>
+            <p>This has nothing to do with Bootstrap, just semantic meaning</p>
+            <p>Keep an eye on how things should flow</p>
+          </section>
+          
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            <div id="page">
+              <header> <!-- full width background -->
+                <nav>
+                  <ul>
+                    <li><a href="#">Viget</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Hire Us</a></li>
+                    <li><a href="#">Get Hired</a></li>
+                  </ul>
+                  </nav>
+              </header>
+              <section id="feature"> <!-- full width background -->
+                feature area
+              </section>
+              <section id="overview">
+                  <h4>Vignet Is</h4>
+                  <p>65 <a href="#">people</a> in 3 <a href="#">offices</a> making remarkable digital products and platforms. Happily independent since 1999.</p>
+                  <div id="how-say">
+                    <img src="http://placehold.it/250x250" alt="">
+                    <h3><a href="#">How do you say Viget?</a></h3>
+                  </div>
+                  <div id="work-promotion">
+                    <img src="http://placehold.it/250x250" alt="">
+                    <h3><a href="#">Anatomy of a Pitch</a></h3>
+                  </div>
+                  <div id="hiring">
+                    <img src="http://placehold.it/250x250" alt="">
+                    <h3><a href="#">We&#39;re Hiring</a></h3>
+                  </div>
+                </div>
+              </section>
+              <section id="the-latest">
+                <p>The Latest...</p>
+                <div class="card">
+                  <p class="detail">
+                    <span class="source">
+                      source
+                    </span>
+                    //
+                    <span class="time">
+                      time
+                    </span>
+                  </p>
+                  <h3>Heading</h3>
+                  <p>This is where the Copy Goes</p>
+                  <img src="http://placehold.it/260x100" alt="">
+                </div>
+              </section>
+              <footer> <!-- full width background -->
+                <nav>
+                    <ul>
+                      <li><h4>About</h4></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                    </ul>
+                    <ul>
+                      <li><h4>Work</h4></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                    </ul>
+                    <ul>
+                      <li><h4>Blogs</h4></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                    </ul>
+                    <ul>
+                      <li><h4>Contact</h4></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                    </ul>
+                    <ul>
+                      <li><h4>MORE</h4></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                    </ul>
+                  </div>
+                </nav>
+                <div class="divider">
+                  <div class="connect">
+                    <div>
+                      <p>Connect with Us</p> 
+                    </div>
+                    <div>
+                    <form action="#">
+                      <label for="email">Email address</label>
+                      <input type="email" id="email" placeholder="Get Email Updates">
+                      <button type="submit">=></button>
+                    </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="about">
+                    <div class="logo">
+                      logo
+                    </div>
+                    <div>
+                      <p>city 1</p>
+                      <p>city 2</p>
+                      <p>city 3</p>
+                    </div>
+                    <div>
+                      <p>phone</p>
+                      <p>fax</p>
+                      <p>email</p>
+                    </div>
+                    <div>
+                      <p>Strategy, Design, &amp; Development. Vigorous since 1999</p>
+                    </div>
+                  </div>
+                  <div>
+                    <p>© 1999–2014 Viget Labs, LLC. Terms &amp; Conditions : Privacy Policy</p>
+                  </div>
+                </div>
+              </footer>
+            </div>
+            ```
+            </script>
+          </section>
+
+          <section>
+            <h2>Define Containers</h2>
+            <p>The Centered Elements of your layout</p>
+            <p>Keep an eye on full-width content and/or backgrounds</p>
+          </section>
+          
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            <div id="page">
+              <header> <!-- full width background -->
+                <div class="container">
+                  <nav>
+                    <ul>
+                      <li><a href="#">Viget</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Work</a></li>
+                      <li><a href="#">Blogs</a></li>
+                      <li><a href="#">Contact</a></li>
+                      <li><a href="#">Hire Us</a></li>
+                      <li><a href="#">Get Hired</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </header>
+              <section id="feature"> <!-- full width background -->
+                feature area
+              </section>
+              <section id="overview">
+                <div class="container">
+                  <h4>Vignet Is</h4>
+                  <p>65 <a href="#">people</a> in 3 <a href="#">offices</a> making remarkable digital products and platforms. Happily independent since 1999.</p>
+                  <div id="how-say">
+                    <img src="http://placehold.it/250x250" alt="">
+                    <h3><a href="#">How do you say Viget?</a></h3>
+                  </div>
+                  <div id="work-promotion">
+                    <img src="http://placehold.it/250x250" alt="">
+                    <h3><a href="#">Anatomy of a Pitch</a></h3>
+                  </div>
+                  <div id="hiring">
+                    <img src="http://placehold.it/250x250" alt="">
+                    <h3><a href="#">We&#39;re Hiring</a></h3>
+                  </div>
+                </div>
+              </section>
+              <section id="the-latest">
+                <div class="container">
+                  <p>The Latest...</p>
+                  <div class="card">
+                    <p class="detail">
+                      <span class="source">
+                        source
+                      </span>
+                      //
+                      <span class="time">
+                        time
+                      </span>
+                    </p>
+                    <h3>Heading</h3>
+                    <p>This is where the Copy Goes</p>
+                    <img src="http://placehold.it/260x100" alt="">
+                  </div>
+                </div>
+              </section>
+              <footer> <!-- full width background -->
+                <div class="container">
+                  <nav>
+                    <ul>
+                      <li><h4>About</h4></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                    </ul>
+                    <ul>
+                      <li><h4>Work</h4></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                    </ul>
+                    <ul>
+                      <li><h4>Blogs</h4></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                    </ul>
+                    <ul>
+                      <li><h4>Contact</h4></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                    </ul>
+                    <ul>
+                      <li><h4>MORE</h4></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                      <li><a href="#">link</a></li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="divider">
+                  <div class="connect container">
+                    <div>
+                      <p>Connect with Us</p> 
+                    </div>
+                    <div>
+                    <form action="#">
+                      <label for="email">Email address</label>
+                      <input type="email" id="email" placeholder="Get Email Updates">
+                      <button type="submit">=></button>
+                    </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="about container">
+                  <div class="logo">
+                    logo
+                  </div>
+                  <div>
+                    <p>city 1</p>
+                    <p>city 2</p>
+                    <p>city 3</p>
+                  </div>
+                  <div>
+                    <p>phone</p>
+                    <p>fax</p>
+                    <p>email</p>
+                  </div>
+                  <div>
+                    <p>Strategy, Design, &amp; Development. Vigorous since 1999</p>
+                  </div>
+                  <div>
+                    <p>© 1999–2014 Viget Labs, LLC. Terms &amp; Conditions : Privacy Policy</p>
+                  </div>
+                </div>
+              </footer>
+            </div>
+            ```
+            </script>
+          </section>
+
+          <section>
+            <h2>Placeholder for Featured Carousel</h2>
+            <p>Hold the space</p>
+          </section>
+          
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            <section id="feature">
+              <div class="jumbotron">
+                <div class="container">
+                  featured scroller    
+                </div>
+              </div>
+            </section>
+            ```
+            </script>
+          </section>
+
+          <section>
+            <h2>Columns for Middle Section</h2>
+            <p>Build out a three column layout</p>
+            <p>Note the full-width text</p>
+          </section>
+          
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            <section id="overview" class="container">
+              <div class="row">
+                <p>vignet is...</p>
+              </div>
+              <div class="row">
+                <div id="how-say" class="col-md-4">
+                  image and text
+                </div>
+                <div id="work-promotion" class="col-md-4">
+                  image and text
+                </div>
+                <div id="hiring" class="col-md-4">
+                  image and text
+                </div>
+              </div>
+            </section>
+            ```
+            </script>
+          </section>
+          
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            <section id="overview" class="container">
+              <div class="row">
+                <div class="col-md-2">
+                  <h4 style="margin:0;">Vignet Is</h4>
+                </div>
+                <div class="col-md-9">
+                  <p>65 <a href="#">people</a> in 3 <a href="#">offices</a> making remarkable digital products and platforms. Happily independent since 1999.</p>
+                </div>
+              </div>
+              <div class="row">
+                <div id="how-say" class="col-md-4 text-center">
+                  <img src="http://placehold.it/250x250" alt="" class="img-thumbnail img-circle">
+                  <h3><a href="#">How do you say Viget?</a></h3>
+                </div>
+                <div id="work-promotion" class="col-md-4 text-center">
+                  <img src="http://placehold.it/250x250" alt="" class="img-thumbnail img-circle">
+                  <h3><a href="#">Anatomy of a Pitch</a></h3>
+                </div>
+                <div id="hiring" class="col-md-4 text-center">
+                  <img src="http://placehold.it/250x250" alt="" class="img-thumbnail img-circle">
+                  <h3><a href="#">We&#39;re Hiring</a></h3>
+                </div>
+              </div>
+            </section>
+            ```
+            </script>
+          </section>
+
+          <section>
+            <h2>Let's Craft a Navbar</h2>
+            <p>Focus on the Top Nav</p>
+          </section>
+          
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            <header>
+              <nav class="container">
+                <ul>
+                  <li>Viget</li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Work</a></li>
+                  <li><a href="#">Blogs</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Hire Us</a></li>
+                  <li><a href="#">Get Hired</a></li>
+                </ul>
+              </nav>
+            </header>
+            ```
+            </script>
+          </section>
+          
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            <header>
+              <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Viget</a>
+                  </div>
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Work</a></li>
+                      <li><a href="#">Blogs</a></li>
+                      <li><a href="#">Contact</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><a href="#">Hire Us</a></li>
+                      <li><a href="#">Get Hired</a></li>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+            </header>
+            ```
+            </script>
+          </section>
+
+          <section>
+            <h2>Column-ize the Footer</h2>
+            <p>A collection of rows and columns</p>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            <nav class="primary container">
+              <div class="row">
+                <ul class="col-md-2 col-md-offset-2">
+                  <li><h4>About</h4></li>
+                  <li><a href="#">link</a></li>
+                  <li><a href="#">link</a></li>
+                  <li><a href="#">link</a></li>
+                  <li><a href="#">link</a></li>
+                </ul>
+                <ul class="col-md-2">
+                  <li><h4>Work</h4></li>
+                  <li><a href="#">link</a></li>
+                  <li><a href="#">link</a></li>
+                </ul>
+                <ul class="col-md-2">
+                  <li><h4>Blogs</h4></li>
+                  <li><a href="#">link</a></li>
+                  <li><a href="#">link</a></li>
+                  <li><a href="#">link</a></li>
+                  <li><a href="#">link</a></li>
+                  <li><a href="#">link</a></li>
+                </ul>
+                <ul class="col-md-2">
+                  <li><h4>Contact</h4></li>
+                  <li><a href="#">link</a></li>
+                  <li><a href="#">link</a></li>
+                </ul>
+                <ul class="col-md-2">
+                  <li><h4>MORE</h4></li>
+                  <li><a href="#">link</a></li>
+                  <li><a href="#">link</a></li>
+                  <li><a href="#">link</a></li>
+                  <li><a href="#">link</a></li>
+                </ul>
+              </div>
+            </nav>
+            ```
+            </script>
+          </section>
+
+
+          <section>
+            <h2>Inline Form in the Footer</h2>
+            <p>With Inset Helper Text</p>
+          </section>
+          
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            <div class="connect container">
+              <div class="row">
+                <div class="col-md-4 col-md-offset-2">
+                  <p>Connect with Us</p> 
+                </div>
+                <div class="col-md-6">
+                  <form action="#" class="form-inline">
+                    <div class="form-group">
+                      <label class="sr-only" for="email">Email address</label>
+                      <input type="email" class="form-control" id="email" placeholder="Get Email Updates">
+                    </div>
+                    <button type="submit" class="btn btn-default">=></button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            ```
+            </script>
+          </section>
+
+          <section>
+            <h2>Build out a Card for The Latest</h2>
+            <p>Create a Repeatable Base Pattern</p>
+            <p>Since the cards don't resize, it doesn't use the grid</p>
+          </section>
+          
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            <div class="card" style="float: left; width: 260px; margin: 0 0 20px 20px; border: 1px solid #ddd; height: 220px;">
+              <p class="detail">
+                <span class="source">
+                  source
+                </span>
+                //
+                <span class="time">
+                  time
+                </span>
+              </p>
+              <h3>Heading</h3>
+              <p>This is where the Copy Goes</p>
+              <img src="http://placehold.it/260x100" alt="">
+            </div>
+            ```
+            </script>
+          </section>
+
+          <section>
+            <h2>Change the Card Container to affect Flow</h2>
+            <p>Use the grid to control the flow</p>
+          </section>
+          
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            <div class="col-xs-6 col-xs-offset-3 col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0">
+              <!-- cards here -->
+            </div>
+            ```
+            </script>
+          </section>
+
+
+          <section>
+            <h2>Drop in a Featured Carousel</h2>
+            <p>Bootstrap-based, and customizable</p>
+          </section>
+          
+          <section data-markdown>
+            <script type="text/template">
+            ```
+            <section id="feature"> <!-- full width background -->
+              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <img src="http://placehold.it/2000x1000" alt="...">
+                    <div class="carousel-caption">
+                      <p>Sample Slider 1</p>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="http://placehold.it/2000x1000" alt="...">
+                    <div class="carousel-caption">
+                      <p>Sample Slider 2</p>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="http://placehold.it/2000x1000" alt="...">
+                    <div class="carousel-caption">
+                      <p>Sample Slider 3</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+              </div>
+            </section>
+            ```
+            </script>
+          </section>
+
+        </section>
+
+
+        <section>
+          <h2>Extend the Design</h2>
+          <ol>
+            <li>Ensure the grid flexes appropriately.</li>
+            <li>Create a new stylesheet and extend the base layout to improve the design.</li>
+          </ol>
+          <aside class="notes">
+            Watch for custom styles that will break the grid (margin/padding).
+          </aside>
+        </section>
+
+        <section>
+          <h2>End</h2>
+          <p>Thanks.</p>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
